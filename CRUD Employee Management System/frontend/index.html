@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <h1>Employee<span>Hub</span></h1>
+            <p>Employee Management System</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <h2>Employee Management</h2>
+                <p>Manage your employee records in one place.</p>
+            </div>
+            <div class="total-card">
+                <span>Total Employees</span>
+                <strong id="totalEmployees">0</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2 id="formTitle">Add New Employee</h2>
+
+            <form id="employeeForm">
+                <input type="hidden" id="employeeId">
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="name">Full Name</label>
+                        <input id="name" type="text" maxlength="100"
+                               placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="department">Department</label>
+                        <input id="department" type="text" maxlength="100"
+                               placeholder="Enter department" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="role">Job Role</label>
+                        <input id="role" type="text" maxlength="100"
+                               placeholder="Enter job role" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="salary">Salary (₹)</label>
+                        <input id="salary" type="number" min="0"
+                               max="99999999.99" step="0.01"
+                               placeholder="Enter salary" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="joinDate">Join Date</label>
+                        <input id="joinDate" type="date" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveButton" class="btn primary">
+                        Add Employee
+                    </button>
+                    <button type="button" id="cancelButton"
+                            class="btn secondary" hidden>
+                        Cancel Edit
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="table-heading">
+                <div>
+                    <h2>Employee Directory</h2>
+                    <p>Search, sort and manage employee records.</p>
+                </div>
+                <input id="searchInput" type="search"
+                       placeholder="Search employees...">
+            </div>
+
+            <p id="statusMessage" role="status" aria-live="polite"></p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><button class="sort-button" data-sort="Id">ID ↕</button></th>
+                            <th><button class="sort-button" data-sort="Name">Name ↕</button></th>
+                            <th><button class="sort-button" data-sort="Department">Department ↕</button></th>
+                            <th><button class="sort-button" data-sort="Role">Role ↕</button></th>
+                            <th><button class="sort-button" data-sort="Salary">Salary ↕</button></th>
+                            <th><button class="sort-button" data-sort="JoinDate">Join Date ↕</button></th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <tr>
+                            <td colspan="7">Loading employees...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 EmployeeHub | Employee Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
