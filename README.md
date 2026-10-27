@@ -321,6 +321,9 @@ Test the following scenarios before submission:
 10. Check the application's response when the backend is unavailable.
 
 
+## Live Website
+
+[View BlueTech Responsive Company Website](https://raginimore21.github.io/week2-assignment/CRUD%20Employee%20Management%20System/frontend/)
 
 
 
