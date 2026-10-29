@@ -325,5 +325,175 @@ Test the following scenarios before submission:
 
 [View BlueTech Responsive Company Website](https://raginimore21.github.io/week2-assignment/CRUD%20Employee%20Management%20System/frontend/)
 
+# Task 3 – Authentication System
+
+## 1. Project Overview
+
+The Authentication System is a web application developed as part of my internship assignment. It allows users to register, log in, and access a protected dashboard.
+
+The application uses bcrypt to hash passwords, JWT for authentication, and MongoDB to store user information and revoked tokens.
+
+## 2. Objectives
+
+- Develop a user registration and login system.
+- Store passwords securely using bcrypt hashing.
+- Implement JWT-based authentication.
+- Protect dashboard routes from unauthorized access.
+- Implement logout using token revocation.
+- Store user information in MongoDB.
+- Test authentication and security features.
+
+## 3. Technologies Used
+
+**Frontend**
+- HTML5
+- CSS3
+- JavaScript
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MongoDB
+- MongoDB Compass
+- Mongoose
+
+**Security**
+- bcrypt
+- JSON Web Token (JWT)
+- Protected routes
+- Token revocation
+
+**Development Tools**
+- Visual Studio Code
+- Google Chrome
+- Git and GitHub
+
+## 4. Project Structure
+
+```text
+task3-authentication/
+├── models/
+│   ├── User.js
+│   └── RevokedToken.js
+├── routes/
+│   └── auth.js
+├── middleware/
+│   └── authMiddleware.js
+├── public/
+│   ├── register.html
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── style.css
+│   └── script.js
+├── .env
+├── .gitignore
+├── package.json
+├── package-lock.json
+├── server.js
+└── README.md
+```
+
+## 5. Features
+
+### User Registration
+Users can create an account by entering their username, email, and password.
+
+### Secure Password Hashing
+Passwords are hashed using bcrypt before being stored in the database.
+
+### User Login
+Registered users can log in using their credentials.
+
+### JWT Authentication
+The server generates a JWT after successful login to authenticate the user.
+
+### Protected Dashboard
+Only authenticated users with a valid token can access protected resources.
+
+### Secure Logout
+The application revokes the current token during logout so it cannot be reused for protected requests.
+
+### Database Integration
+MongoDB stores user information in the `users` collection and revoked tokens in the `revokedtokens` collection.
+
+## 6. Database Design
+
+**Database name:** `authenticationDB`
+
+| Collection | Description |
+|---|---|
+| `users` | Stores registered user details and hashed passwords |
+| `revokedtokens` | Stores revoked tokens and their expiration information |
+
+## 7. Installation and Setup
+
+### Prerequisites
+
+Install the following software:
+
+- Node.js and npm
+- MongoDB or a MongoDB Atlas account
+- MongoDB Compass (optional)
+- Visual Studio Code
+
+### Step 1: Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd task3-authentication
+```
+
+Replace the placeholder with your actual repository URL.
+
+### Step 2: Install Dependencies
+
+```bash
+npm install
+```
+
+### Step 3: Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_private_secret_key
+```
+
+Use your actual MongoDB connection string and a strong, private JWT secret. Never upload `.env` to a public repository.
+
+### Step 4: Start the Server
+
+```bash
+npx nodemon server.js
+```
+
+### Step 5: Open the Application
+
+Registration page:
+
+`http://localhost:5000/register.html`
+
+Login page:
+
+`http://localhost:5000/login.html`
+
+## 8. Testing
+
+Test the following scenarios:
+
+- Register a new user.
+- Verify that the password is stored as a hash.
+- Log in with valid credentials.
+- Verify that invalid credentials are rejected.
+- Access the protected dashboard after login.
+- Log out and verify token revocation.
+- Confirm that revoked tokens cannot access protected routes.
+- Verify user and revoked-token records in MongoDB Compass.
+
+
 
 
